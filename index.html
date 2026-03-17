@@ -6,222 +6,560 @@
 <title>Fly-Ventory</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: var(--sand);   /* Sand beige for the whole page */
-  color: var(--charcoal);    /* Dark text for readability */
-  margin: 0;
-  padding: 0;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
-}
-
-h1{
-font-size:28px;
-}
-
-.cart{
-font-weight:bold;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.card {
-  background: white;          /* cards stay white for contrast */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.card-content{
-padding:15px;
-}
-
-.price{
-color:gray;
-margin-bottom:10px;
-}
-
-button{
-button {
-width:100%;
-padding:12px;
-border:none;
-background:#0077ff;
-color:white;
-border-radius:8px;
-cursor:pointer;
-font-size:15px;
-transition:background 0.3s;
-}
-
-button:hover {
-background:#005fcc;
+  /* --- Safari + City Theme Variables --- */
+  :root {
+    --safari-green: #2f5d50;
+    --sand: #f4efe6;
+    --charcoal: #1f1f1f;
   }
-  
-footer {
-  background: var(--charcoal);
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-}
-  
+
+  /* --- Global Page Styles --- */
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--sand);
+    color: var(--charcoal);
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* --- Navigation Bar --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--charcoal);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header h2 {
+    margin: 0;
+  }
+
+  nav a {
+    margin: 0 15px;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* --- Hero Section with Diagonal Split --- */
+  .hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, var(--safari-green) 50%, var(--charcoal) 50%);
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .hero button {
+    padding: 14px 28px;
+    font-size: 16px;
+    background: white;
+    color: var(--charcoal);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .hero button:hover {
+    background: #f0f0f0;
+  }
+
+  /* --- Product Grid --- */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .card-content {
+    padding: 12px;
+  }
+
+  .card h3 {
+    margin: 0 0 8px 0;
+  }
+
+  .card p {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .card .price {
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: var(--safari-green);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s;
+  }
+
+  .card button:hover {
+    background: #24463c;
+  }
+
+  /* --- Why Shop With Us Section --- */
+  .trust {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f5f5f5;
+    margin-top: 40px;
+    border-radius: 12px;
+  }
+
+  .trust h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .trust .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .trust h3 {
+    margin-bottom: 8px;
+  }
+
+  .trust p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* --- Footer --- */
+  footer {
+    background: var(--charcoal);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+  }
 </style>
-
 </head>
-
 <body>
 
-<header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
-  <div>
-    <img src="https://raw.githubusercontent.com/cuba389/Fly-Ventory/main/th.jpeg" alt="Fly-Ventory Logo" style="height:45px;">
-  </div>
-  <h1 style="font-size:30px;">Fly-Ventory</h1>
-  <div style="font-weight:bold;">
-    🛒 Cart: <span id="cart-count">0</span>
-  </div>
+<!-- --- Navigation --- -->
+<header>
+  <h2>Fly-Ventory</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Travel Gear</a>
+    <a href="#">Gadgets</a>
+    <a href="#">Trending</a>
+    <a href="#">Contact</a>
+  </nav>
 </header>
 
-  <section style="text-align:center; padding:60px 20px; background:#ffffff; margin-bottom:40px; border-radius:12px;">
-  
-<h2 style="font-size:36px; margin-bottom:10px;">Welcome to Fly-Ventory</h2>
-
-<p style="font-size:18px; color:gray; margin-bottom:25px;">
-Explore nice to have gadgets and everyday essentials designed for modern & outdoor living.
-</p>
-
-<button style="padding:12px 25px; font-size:16px; background:black; color:white; border:none; border-radius:8px; cursor:pointer;">
-Shop Now
-</button>
-
-  </section>
-  
-<div class="products">
-
-<div class="card">
-<img src=https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4">
-<div class="card-content">
-<h3>Minimalist Backpack</h3>
-<p class="price">$39.99</p>
-<button onclick="addToCart()">Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c">
-<div class="card-content">
-<h3>LED Desk Lamp</h3>
-<p class="price">$24.99</p>
-<button onclick="addToCart()">Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
-<div class="card-content">
-<h3>Wireless Earbuds</h3>
-<p class="price">$49.99</p>
-<button onclick="addToCart()">Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8">
-<div class="card-content">
-<h3>Smart Water Bottle</h3>
-<p class="price">$29.99</p>
-<button onclick="addToCart()">Add to Cart</button>
-</div>
-</div>
-
-</div>
-
-  <section style="
-position:relative;
-padding:100px 20px;
-text-align:center;
-color:white;
-background:linear-gradient(135deg,#2f5d50 50%, #1f1f1f 50%);
-border-radius:12px;
-margin-bottom:40px;
-">
-
-<h1 style="font-size:42px; margin-bottom:10px;">Fly-Ventory</h1>
-
-<p style="font-size:20px; margin-bottom:25px;">
-Travel Gear • Smart Gadgets • Trending Finds
-</p>
-
-<button style="
-padding:14px 28px;
-font-size:16px;
-background:white;
-color:#1f1f1f;
-border:none;
-border-radius:8px;
-cursor:pointer;
-">
-Explore Products
-</button>
-
-  </section>
-  
-<h2 style="font-size:28px; margin-bottom:30px;">Why Shop With Fly-Ventory?</h2>
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:25px; max-width:900px; margin:auto;">
-
-<div>
-<h3>🧭 Adventure Ready</h3>
-<p>Products designed for travelers, explorers, and everyday adventurers.</p>
-</div>
-
-<div>
-<h3>🚚 Fast Shipping</h3>
-<p>Reliable delivery so your gear arrives before your next adventure.</p>
-</div>
-
-<div>
-<h3>🛡 Secure Checkout</h3>
-<p>Your payments and personal information are fully protected.</p>
-</div>
-
-</div>
-
+<!-- --- Hero Section --- -->
+<section class="hero">
+  <h1>Fly-Ventory</h1>
+  <p>Travel Gear • Smart Gadgets • Trending Finds</p>
+  <button>Explore Products</button>
 </section>
 
+<!-- --- Products Section --- -->
+<div class="products">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4" alt="Minimalist Backpack">
+    <div class="card-content">
+      <h3>Minimalist Backpack</h3>
+      <p>Perfect for travel, work, and everyday carry.</p>
+      <p class="price">$39.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c" alt="LED Desk Lamp">
+    <div class="card-content">
+      <h3>LED Desk Lamp</h3>
+      <p>Compact lamp for work and study spaces.</p>
+      <p class="price">$24.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="Wireless Earbuds">
+    <div class="card-content">
+      <h3>Wireless Earbuds</h3>
+      <p>Noise-cancelling and long battery life.</p>
+      <p class="price">$49.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8" alt="Smart Water Bottle">
+    <div class="card-content">
+      <h3>Smart Water Bottle</h3>
+      <p>Track hydration and temperature on-the-go.</p>
+      <p class="price">$29.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- --- Why Shop With Us --- -->
+<section class="trust">
+  <h2>Why Shop With Fly-Ventory?</h2>
+  <div class="grid">
+    <div>
+      <h3>🧭 Adventure Ready</h3>
+      <p>Products designed for travelers, explorers, and everyday adventurers.</p>
+    </div>
+    <div>
+      <h3>🚚 Fast Shipping</h3>
+      <p>Reliable delivery so your gear arrives before your next adventure.</p>
+    </div>
+    <div>
+      <h3>🛡 Secure Checkout</h3>
+      <p>Your payments and personal information are fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- --- Footer --- -->
 <footer>
-© 2026 Fly-Ventory — Powered for Dropshipping
+  © 2026 Fly-Ventory — Powered for Dropshipping
 </footer>
 
-<script>
-let cart=0;
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fly-Ventory</title>
 
-function addToCart(){
-cart++;
-document.getElementById("cart-count").innerText=cart;
-}
-</script>
+<style>
+  /* --- Safari + City Theme Variables --- */
+  :root {
+    --safari-green: #2f5d50;
+    --sand: #f4efe6;
+    --charcoal: #1f1f1f;
+  }
+
+  /* --- Global Page Styles --- */
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--sand);
+    color: var(--charcoal);
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* --- Navigation Bar --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--charcoal);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header h2 {
+    margin: 0;
+  }
+
+  nav a {
+    margin: 0 15px;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* --- Hero Section with Diagonal Split --- */
+  .hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, var(--safari-green) 50%, var(--charcoal) 50%);
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .hero button {
+    padding: 14px 28px;
+    font-size: 16px;
+    background: white;
+    color: var(--charcoal);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .hero button:hover {
+    background: #f0f0f0;
+  }
+
+  /* --- Product Grid --- */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .card-content {
+    padding: 12px;
+  }
+
+  .card h3 {
+    margin: 0 0 8px 0;
+  }
+
+  .card p {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .card .price {
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: var(--safari-green);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s;
+  }
+
+  .card button:hover {
+    background: #24463c;
+  }
+
+  /* --- Why Shop With Us Section --- */
+  .trust {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f5f5f5;
+    margin-top: 40px;
+    border-radius: 12px;
+  }
+
+  .trust h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .trust .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .trust h3 {
+    margin-bottom: 8px;
+  }
+
+  .trust p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* --- Footer --- */
+  footer {
+    background: var(--charcoal);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- --- Navigation --- -->
+<header>
+  <h2>Fly-Ventory</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Travel Gear</a>
+    <a href="#">Gadgets</a>
+    <a href="#">Trending</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- --- Hero Section --- -->
+<section class="hero">
+  <h1>Fly-Ventory</h1>
+  <p>Travel Gear • Smart Gadgets • Trending Finds</p>
+  <button>Explore Products</button>
+</section>
+
+<!-- --- Products Section --- -->
+<div class="products">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4" alt="Minimalist Backpack">
+    <div class="card-content">
+      <h3>Minimalist Backpack</h3>
+      <p>Perfect for travel, work, and everyday carry.</p>
+      <p class="price">$39.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c" alt="LED Desk Lamp">
+    <div class="card-content">
+      <h3>LED Desk Lamp</h3>
+      <p>Compact lamp for work and study spaces.</p>
+      <p class="price">$24.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="Wireless Earbuds">
+    <div class="card-content">
+      <h3>Wireless Earbuds</h3>
+      <p>Noise-cancelling and long battery life.</p>
+      <p class="price">$49.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8" alt="Smart Water Bottle">
+    <div class="card-content">
+      <h3>Smart Water Bottle</h3>
+      <p>Track hydration and temperature on-the-go.</p>
+      <p class="price">$29.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- --- Why Shop With Us --- -->
+<section class="trust">
+  <h2>Why Shop With Fly-Ventory?</h2>
+  <div class="grid">
+    <div>
+      <h3>🧭 Adventure Ready</h3>
+      <p>Products designed for travelers, explorers, and everyday adventurers.</p>
+    </div>
+    <div>
+      <h3>🚚 Fast Shipping</h3>
+      <p>Reliable delivery so your gear arrives before your next adventure.</p>
+    </div>
+    <div>
+      <h3>🛡 Secure Checkout</h3>
+      <p>Your payments and personal information are fully protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- --- Footer --- -->
+<footer>
+  © 2026 Fly-Ventory — Powered for Dropshipping
+</footer>
 
 </body>
-</html>
+      </html>
