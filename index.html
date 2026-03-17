@@ -5,7 +5,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fly-Ventory</title>
 
-<style>
+</* Header layout */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--charcoal);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+/* Hamburger */
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Hidden menu links */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: var(--charcoal);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nav-links a {
+  color: white;
+  padding: 8px 0;
+  display: block;
+  font-weight: bold;
+}
+
+/* Show menu when active */
+.nav-links.active {
+  display: flex;
+}
+
+/* Responsive: show menu as horizontal on desktop */
+@media(min-width:768px){
+  .menu-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background: none;
+    padding: 0;
+  }
+  .nav-links a {
+    padding: 0 15px;
+  }
+}>
   /* --- Safari + City Theme Variables --- */
   :root {
     --safari-green: #2f5d50;
@@ -28,27 +100,35 @@
   }
 
   /* --- Navigation Bar --- */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: var(--charcoal);
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+  <header>
+  <!-- Left: Logo -->
+  <div class="logo">
+    <img src="th.jpeg" alt="Fly-Ventory Logo" />
+  </div>
 
-  header h2 {
-    margin: 0;
-  }
+  <!-- Center: Brand Name -->
+  <div class="brand">Fly-Ventory</div>
 
-  nav a {
-    margin: 0 15px;
-    color: white;
-    font-weight: bold;
-  }
+  <!-- Right: Hamburger Menu -->
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <!-- Hidden Menu -->
+  <nav id="nav-links" class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Travel Gear</a>
+    <a href="#">Gadgets</a>
+    <a href="#">Trending</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
   /* --- Hero Section with Diagonal Split --- */
   .hero {
