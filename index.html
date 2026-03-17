@@ -6,11 +6,12 @@
 <title>Fly-Ventory</title>
 
 <style>
-body{
-font-family: Arial, sans-serif;
-background:#f5f5f5;
-margin:0;
-padding:20px;
+body {
+  font-family: Arial, sans-serif;
+  background: var(--sand);   /* Sand beige for the whole page */
+  color: var(--charcoal);    /* Dark text for readability */
+  margin: 0;
+  padding: 0;
 }
 
 header{
@@ -35,11 +36,11 @@ gap:20px;
 }
 
 .card {
-background:white;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-overflow:hidden;
-transition:transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;          /* cards stay white for contrast */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -78,12 +79,14 @@ transition:background 0.3s;
 button:hover {
 background:#005fcc;
   }
-footer{
-text-align:center;
-margin-top:40px;
-color:gray;
-font-size:14px;
+  
+footer {
+  background: var(--charcoal);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
 }
+  
 </style>
 
 </head>
