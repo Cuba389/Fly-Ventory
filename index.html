@@ -34,11 +34,17 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
-.card{
+.card {
 background:white;
 border-radius:12px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 overflow:hidden;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .card img{
@@ -57,19 +63,21 @@ margin-bottom:10px;
 }
 
 button{
+button {
 width:100%;
-padding:10px;
+padding:12px;
 border:none;
-background:black;
+background:#0077ff;
 color:white;
 border-radius:8px;
 cursor:pointer;
+font-size:15px;
+transition:background 0.3s;
 }
 
-button:hover{
-opacity:0.8;
-}
-
+button:hover {
+background:#005fcc;
+  }
 footer{
 text-align:center;
 margin-top:40px;
