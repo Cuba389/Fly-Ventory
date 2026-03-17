@@ -498,70 +498,259 @@ header {
     margin-bottom: 12px;
   }
 
-  .card button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background: var(--safari-green);
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background 0.3s;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fly-Ventory</title>
 
-  .card button:hover {
-    background: #24463c;
-  }
+<style>
+/* --- Safari + City Theme Variables --- */
+:root {
+  --safari-green: #2f5d50;
+  --sand: #f4efe6;
+  --charcoal: #1f1f1f;
+}
 
-  /* --- Why Shop With Us Section --- */
-  .trust {
-    padding: 50px 20px;
-    text-align: center;
-    background: #f5f5f5;
-    margin-top: 40px;
-    border-radius: 12px;
-  }
+/* --- Global Styles --- */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--sand);
+  color: var(--charcoal);
+  margin: 0;
+  padding: 0;
+}
 
-  .trust h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  .trust .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 25px;
-    max-width: 900px;
-    margin: auto;
-  }
+/* --- Header / Navigation --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--charcoal);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .trust h3 {
-    margin-bottom: 8px;
-  }
+.logo img {
+  height: 40px;
+  width: auto;
+}
 
-  .trust p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
-  }
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
 
-  /* --- Footer --- */
-  footer {
-    background: var(--charcoal);
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
+/* Hamburger menu */
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: var(--charcoal);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nav-links a {
+  color: white;
+  padding: 8px 0;
+  display: block;
+  font-weight: bold;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+@media(min-width:768px){
+  .menu-toggle { display: none; }
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background: none;
+    padding: 0;
   }
+  .nav-links a {
+    padding: 0 15px;
+  }
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg,var(--safari-green) 50%, var(--charcoal) 50%);
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.hero button {
+  padding: 14px 28px;
+  font-size: 16px;
+  background: white;
+  color: var(--charcoal);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero button:hover {
+  background: #f0f0f0;
+}
+
+/* --- Products Section --- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-content {
+  padding: 12px;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+}
+
+.card p {
+  margin: 0 0 12px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.card .price {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: var(--safari-green);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #24463c;
+}
+
+/* --- Trust Section --- */
+.trust {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f5f5f5;
+  margin-top: 40px;
+  border-radius: 12px;
+}
+
+.trust h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.trust .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.trust h3 {
+  margin-bottom: 8px;
+}
+
+.trust p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* --- Footer --- */
+footer {
+  background: var(--charcoal);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
 </style>
 </head>
+
 <body>
 
-<!-- --- Navigation --- -->
+<!-- --- Header --- -->
 <header>
-  <h2>Fly-Ventory</h2>
-  <nav>
+  <div class="logo">
+    <img src="th.jpeg" alt="Fly-Ventory Logo" />
+  </div>
+  <div class="brand">Fly-Ventory</div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <nav id="nav-links" class="nav-links">
     <a href="#">Home</a>
     <a href="#">Travel Gear</a>
     <a href="#">Gadgets</a>
@@ -569,6 +758,14 @@ header {
     <a href="#">Contact</a>
   </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
 <!-- --- Hero Section --- -->
 <section class="hero">
@@ -617,7 +814,7 @@ header {
   </div>
 </div>
 
-<!-- --- Why Shop With Us --- -->
+<!-- --- Trust Section --- -->
 <section class="trust">
   <h2>Why Shop With Fly-Ventory?</h2>
   <div class="grid">
@@ -642,4 +839,4 @@ header {
 </footer>
 
 </body>
-      </html>
+</html>
