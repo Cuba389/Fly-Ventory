@@ -344,184 +344,209 @@ header {
 .nav-links {
   display: none;
   flex-direction: column;
-  background: var(--charcoal);
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 200px;
-  padding: 10px;
-  border-radius: 8px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fly-Ventory</title>
+
+<style>
+:root {
+  --safari-green: #2f5d50;
+  --sand: #f4efe6;
+  --charcoal: #1f1f1f;
 }
 
-.nav-links a {
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--sand);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--charcoal);
   color: white;
-  padding: 8px 0;
-  display: block;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.brand {
+  font-size: 22px;
   font-weight: bold;
 }
 
-.nav-links.active {
-  display: flex;
+/* HAMBURGER */
+.menu {
+  font-size: 28px;
+  cursor: pointer;
 }
 
-@media(min-width:768px){
-  .menu-toggle { display: none; }
-  .nav-links {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    width: auto;
-    background: none;
-    padding: 0;
-  }
-  .nav-links a {
-    padding: 0 15px;
-  }
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 10px;
 }
 
-/* --- Hero Section --- */
+.dropdown a {
+  display: block;
+  padding: 8px;
+}
+
+/* HERO */
 .hero {
   position: relative;
-  padding: 100px 20px;
+  padding: 80px 20px;
   text-align: center;
   color: white;
-  background: linear-gradient(135deg,var(--safari-green) 50%, var(--charcoal) 50%);
-  border-radius: 12px;
-  margin-bottom: 40px;
+  overflow: hidden;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--safari-green) 50%, #333 50%);
+  z-index: 0;
 }
 
-.hero p {
-  font-size: 20px;
-  margin-bottom: 25px;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-.hero button {
-  padding: 14px 28px;
-  font-size: 16px;
-  background: white;
-  color: var(--charcoal);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.hero-bg {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
 }
 
-.hero button:hover {
-  background: #f0f0f0;
+.safari {
+  left: 0;
+  background-image: url('https://i.ibb.co/3s6yM9D/safari-silhouette.png');
 }
 
-/* --- Products Section --- */
+.city {
+  right: 0;
+  background-image: url('https://i.ibb.co/0rVbBx7/city-silhouette.png');
+}
+
+/* PRODUCTS */
 .products {
+  padding: 40px 20px;
+}
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 20px;
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
 }
 
 .card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  padding: 10px;
+  text-align: center;
 }
 
 .card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 10px;
 }
 
-.card-content {
-  padding: 12px;
-}
-
-.card h3 {
-  margin: 0 0 8px 0;
-}
-
-.card p {
-  margin: 0 0 12px 0;
-  color: #666;
-  font-size: 14px;
-}
-
-.card .price {
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.card button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: var(--safari-green);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background 0.3s;
-}
-
-.card button:hover {
-  background: #24463c;
-}
-
-/* --- Trust Section --- */
-.trust {
-  padding: 50px 20px;
-  text-align: center;
-  background: #f5f5f5;
-  margin-top: 40px;
-  border-radius: 12px;
-}
-
-.trust h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.trust .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.trust h3 {
-  margin-bottom: 8px;
-}
-
-.trust p {
-  margin: 0;
-  font-size: 14px;
-  color: #333;
-}
-
-/* --- Footer --- */
+/* FOOTER */
 footer {
   background: var(--charcoal);
   color: white;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+  padding: 20px;
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="logo.png">
+  </div>
+
+  <div class="brand">Fly-Ventory</div>
+
+  <div class="menu" onclick="toggleMenu()">☰</div>
+
+  <div class="dropdown" id="menu">
+    <a href="#">Home</a>
+    <a href="#">Travel Gear</a>
+    <a href="#">Trending</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Explore the World 🌍</h1>
+    <p>Safari Meets City Travel Gear</p>
+  </div>
+
+  <div class="hero-bg safari"></div>
+  <div class="hero-bg city"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <h2>Trending Products</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4">
+      <h3>Backpack</h3>
+      <p>$39.99</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c">
+      <h3>Lamp</h3>
+      <p>$24.99</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
+      <h3>Earbuds</h3>
+      <p>$49.99</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Fly-Ventory | Travel Smart</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  let menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
