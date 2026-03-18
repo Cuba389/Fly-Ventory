@@ -78,13 +78,23 @@ footer {
 
 <body>
 
-<header>
-  <div style="display:flex; align-items:center; gap:10px;">
+<header style="display:grid; grid-template-columns: 1fr 1fr 1fr; align-items:center; padding:10px 20px; background:#1f1f1f; color:white;">
+
+  <!-- LEFT: LOGO -->
+  <div>
     <img src="logo.png" style="height:35px;">
-    <div class="brand">Fly-Ventory</div>
   </div>
 
-  <div>🛒 <span id="cart-count">0</span></div>
+  <!-- CENTER: BRAND -->
+  <div style="text-align:center; font-size:22px; font-weight:bold;">
+    Fly-Ventory
+  </div>
+
+  <!-- RIGHT: CART -->
+  <div style="text-align:right;">
+    🛒 <span id="cart-count">0</span>
+  </div>
+
 </header>
 
 <section class="hero">
