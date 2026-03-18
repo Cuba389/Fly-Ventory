@@ -7,372 +7,26 @@
 
 <style>
 :root {
-  --safari-green: #2f5d50;
+  --green: #2f5d50;
   --sand: #f4efe6;
-  --charcoal: #1f1f1f;
+  --dark: #1f1f1f;
 }
 
-/* --- Global Styles --- */
-body {
-  font-family: Arial, sans-serif;
-  background: var(--sand);
-  color: var(--charcoal);
-  margin: 0;
-  padding: 0;
-}
-
-a { text-decoration: none; color: inherit; }
-
-/* --- Header --- */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background
-  <!-- Left: Logo -->
-  <div class="logo">
-    <img src="th.jpeg" alt="Fly-Ventory Logo" />
-  </div>
-
-  <!-- Center: Brand Name -->
-  <div class="brand">Fly-Ventory</div>
-
-  <!-- Right: Hamburger Menu -->
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-
-  <!-- Hidden Menu -->
-  <nav id="nav-links" class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Travel Gear</a>
-    <a href="#">Gadgets</a>
-    <a href="#">Trending</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav-links');
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
-
-</style>
-</head>
-<body>
-
-<!-- --- Hero Section --- -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Fly-Ventory</h1>
-    <p>Travel Gear • Smart Gadgets • Trending Finds</p>
-    <button>Explore Products</button>
-  </div>
-  <div class="hero-bg safari"></div>
-  <div class="hero-bg city"></div>
-</section>
-  <h1>Fly-Ventory</h1>
-  <p>Travel Gear • Smart Gadgets • Trending Finds</p>
-  <button>Explore Products</button>
-</section>
-
-<!-- --- Products Section --- -->
-<div class="products">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4" alt="Minimalist Backpack">
-    <div class="card-content">
-      <h3>Minimalist Backpack</h3>
-      <p>Perfect for travel, work, and everyday carry.</p>
-      <p class="price">$39.99</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c" alt="LED Desk Lamp">
-    <div class="card-content">
-      <h3>LED Desk Lamp</h3>
-      <p>Compact lamp for work and study spaces.</p>
-      <p class="price">$24.99</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="Wireless Earbuds">
-    <div class="card-content">
-      <h3>Wireless Earbuds</h3>
-      <p>Noise-cancelling and long battery life.</p>
-      <p class="price">$49.99</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8" alt="Smart Water Bottle">
-    <div class="card-content">
-      <h3>Smart Water Bottle</h3>
-      <p>Track hydration and temperature on-the-go.</p>
-      <p class="price">$29.99</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-</div>
-
-<!-- --- Why Shop With Us --- -->
-<section class="trust">
-  <h2>Why Shop With Fly-Ventory?</h2>
-  <div class="grid">
-    <div>
-      <h3>🧭 Adventure Ready</h3>
-      <p>Products designed for travelers, explorers, and everyday adventurers.</p>
-    </div>
-    <div>
-      <h3>🚚 Fast Shipping</h3>
-      <p>Reliable delivery so your gear arrives before your next adventure.</p>
-    </div>
-    <div>
-      <h3>🛡 Secure Checkout</h3>
-      <p>Your payments and personal information are fully protected.</p>
-    </div>
-  </div>
-</section>
-
-<!-- --- Footer --- -->
-<footer>
-  © 2026 Fly-Ventory — Powered for Dropshipping
-</footer>
-
-</body>
-  </html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly-Ventory</title>
-
-<style>
-  /* --- Safari + City Theme Variables --- */
-  :root {
-    --safari-green: #2f5d50;
-    --sand: #f4efe6;
-    --charcoal: #1f1f1f;
-  }
-
-  /* --- Global Page Styles --- */
-  body {
-    font-family: Arial, sans-serif;
-    background: var(--sand);
-    color: var(--charcoal);
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  /* --- Navigation Bar --- */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: var(--charcoal);
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  header h2 {
-    margin: 0;
-  }
-
-  nav a {
-    margin: 0 15px;
-    color: white;
-    font-weight: bold;
-  }
-
-  /* --- Hero Section with Diagonal Split --- */
-  .hero {
-    position: relative;
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
-    background: linear-gradient(135deg, var(--safari-green) 50%, var(--charcoal) 50%);
-    border-radius: 12px;
-    margin-bottom: 40px;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-  }
-
-  .hero p {
-    font-size: 20px;
-    margin-bottom: 25px;
-  }
-
-  .hero button {
-    padding: 14px 28px;
-    font-size: 16px;
-    background: white;
-    color: var(--charcoal);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .hero button:hover {
-    background: #f0f0f0;
-  }
-
-  /* --- Product Grid --- */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-  }
-
-  .card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  }
-
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-
-  .card-content {
-    padding: 12px;
-  }
-
-  .card h3 {
-    margin: 0 0 8px 0;
-  }
-
-  .card p {
-    margin: 0 0 12px 0;
-    color: #666;
-    font-size: 14px;
-  }
-
-  .card .price {
-    font-weight: bold;
-    margin-bottom: 12px;
-  }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly-Ventory</title>
-
-<style>
-/* --- Safari + City Theme Variables --- */
-:root {
-  --safari-green: #2f5d50;
-  --sand: #f4efe6;
-  --charcoal: #1f1f1f;
-}
-
-/* --- Global Styles --- */
-body {
-  font-family: Arial, sans-serif;
-  background: var(--sand);
-  color: var(--charcoal);
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* --- Header / Navigation --- */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: var(--charcoal);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo img {
-  height: 40px;
-  width: auto;
-}
-
-.brand {
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-/* Hamburger menu */
-.menu-toggle {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.nav-links {
-  display: none;
-  flex-direction: column;
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly-Ventory</title>
-
-<style>
-:root {
-  --safari-green: #2f5d50;
-  --sand: #f4efe6;
-  --charcoal: #1f1f1f;
-}
-
-/* GLOBAL */
+/* RESET */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: var(--sand);
 }
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  background: var(--charcoal);
+  background: var(--dark);
   color: white;
-  padding: 10px 20px;
+  padding: 10px;
 }
 
 .logo img {
@@ -380,30 +34,32 @@ header {
 }
 
 .brand {
-  font-size: 22px;
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
 }
 
-/* HAMBURGER */
 .menu {
-  font-size: 28px;
+  text-align: right;
+  font-size: 26px;
   cursor: pointer;
 }
 
+/* DROPDOWN */
 .dropdown {
   display: none;
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 60px;
   background: white;
-  color: black;
-  border-radius: 8px;
   padding: 10px;
+  border-radius: 8px;
 }
 
 .dropdown a {
   display: block;
   padding: 8px;
+  color: black;
 }
 
 /* HERO */
@@ -412,40 +68,19 @@ header {
   padding: 80px 20px;
   text-align: center;
   color: white;
-  overflow: hidden;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--safari-green) 50%, #333 50%);
+  background: linear-gradient(135deg, var(--green) 50%, #333 50%);
   z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-}
-
-.hero-bg {
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.2;
-}
-
-.safari {
-  left: 0;
-  background-image: url('https://i.ibb.co/3s6yM9D/safari-silhouette.png');
-}
-
-.city {
-  right: 0;
-  background-image: url('https://i.ibb.co/0rVbBx7/city-silhouette.png');
 }
 
 /* PRODUCTS */
@@ -461,8 +96,8 @@ header {
 
 .card {
   background: white;
-  border-radius: 12px;
   padding: 10px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -473,7 +108,7 @@ header {
 
 /* FOOTER */
 footer {
-  background: var(--charcoal);
+  background: var(--dark);
   color: white;
   text-align: center;
   padding: 20px;
@@ -483,7 +118,6 @@ footer {
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
     <img src="logo.png">
@@ -492,26 +126,21 @@ footer {
   <div class="brand">Fly-Ventory</div>
 
   <div class="menu" onclick="toggleMenu()">☰</div>
-
-  <div class="dropdown" id="menu">
-    <a href="#">Home</a>
-    <a href="#">Travel Gear</a>
-    <a href="#">Trending</a>
-  </div>
 </header>
 
-<!-- HERO -->
+<div class="dropdown" id="menu">
+  <a href="#">Home</a>
+  <a href="#">Travel Gear</a>
+  <a href="#">Trending</a>
+</div>
+
 <section class="hero">
   <div class="hero-content">
-    <h1>Explore the World 🌍</h1>
-    <p>Safari Meets City Travel Gear</p>
+    <h1>Safari Meets City Travel 🌍</h1>
+    <p>Explore Gear. Travel Smart.</p>
   </div>
-
-  <div class="hero-bg safari"></div>
-  <div class="hero-bg city"></div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="products">
   <h2>Trending Products</h2>
 
@@ -536,9 +165,8 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Fly-Ventory | Travel Smart</p>
+  <p>© 2026 Fly-Ventory</p>
 </footer>
 
 <script>
@@ -549,4 +177,4 @@ function toggleMenu() {
 </script>
 
 </body>
-</html>
+  </html>
