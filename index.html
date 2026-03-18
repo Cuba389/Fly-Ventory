@@ -103,11 +103,10 @@ footer {
     🛒 Cart: <span id="cart-count">0</span>
   </div>
 
-  <a href="#" style="display:block; padding:12px;">Home</a>
-  <a href="#" style="display:block; padding:12px;">Travel Gear</a>
-  <a href="#" style="display:block; padding:12px;">Gadgets</a>
-  <a href="#" style="display:block; padding:12px;">Trending</a>
-
+  <a href="#" onclick="filterProducts('all')">Home</a>
+<a href="#" onclick="filterProducts('travel')">Travel Gear</a>
+<a href="#" onclick="filterProducts('gadget')">Gadgets</a>
+<a href="#" onclick="filterProducts('all')">Trending</a>
   </div>
 
 <section class="hero">
@@ -118,28 +117,26 @@ footer {
 <section class="products">
   <h2>Products</h2>
 
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4">
-      <h3>Backpack</h3>
-      <p>$39.99</p>
-      <button onclick="addToCart()">Add to Cart</button>
-    </div>
+  <div class="card" data-category="travel">
+  <img src="https://images.unsplash.com/photo-1514474959185-1472d4c4e0d4">
+  <h3>Backpack</h3>
+  <p>$39.99</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c">
-      <h3>Desk Lamp</h3>
-      <p>$24.99</p>
-      <button onclick="addToCart()">Add toCart</button>
-    </div>
+<div class="card" data-category="gadget">
+  <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c">
+  <h3>Desk Lamp</h3>
+  <p>$24.99</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
-      <h3>Wireless Earbuds</h3>
-      <p>$49.99</p>
-      <button onclick="addToCart()">Add to Cart</button>
-    </div>
-  </div>
+<div class="card" data-category="gadget">
+  <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
+  <h3>Wireless Earbuds</h3>
+  <p>$49.99</p>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
 </section>
 
 <footer>
@@ -147,16 +144,20 @@ footer {
 </footer>
 
 <script>
-let count = 0;
+function filterProducts(category) {
+  let products = document.querySelectorAll(".card");
 
-function addToCart() {
-  count++;
-  document.querySelectorAll("#cart-count").forEach(el => el.innerText = count);
-}
-
-function toggleMenu() {
-  let menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+  products.forEach(card => {
+    if (category === "all") {
+      card.style.display = "block";
+    } else {
+      if (card.getAttribute("data-category") === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    }
+  });
 }
 </script>
 
