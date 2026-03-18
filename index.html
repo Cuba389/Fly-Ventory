@@ -91,9 +91,18 @@ footer {
   </div>
 
   <!-- RIGHT -->
-  <div style="text-align:right; font-size:26px; cursor:pointer;" onclick="toggleMenu()">
-    ☰
+  <div id="menu" style="display:none; background:white;">
+
+  <div style="padding:12px; border-bottom:1px solid #eee;">
+    🛒 Cart: <span id="cart-count">0</span>
   </div>
+
+  <a href="#" style="display:block; padding:12px;">Home</a>
+  <a href="#" style="display:block; padding:12px;">Travel Gear</a>
+  <a href="#" style="display:block; padding:12px;">Gadgets</a>
+  <a href="#" style="display:block; padding:12px;">Trending</a>
+
+</div>
 
 </header>
 
@@ -135,9 +144,15 @@ footer {
 
 <script>
 let count = 0;
+
 function addToCart() {
   count++;
-  document.getElementById("cart-count").innerText = count;
+  document.querySelectorAll("#cart-count").forEach(el => el.innerText = count);
+}
+
+function toggleMenu() {
+  let menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 </script>
 
