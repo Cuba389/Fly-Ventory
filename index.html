@@ -142,7 +142,21 @@ footer {
 <footer>
   <p>© 2026 Fly-Ventory</p>
 </footer>
+  
+<script>
+let count = 0;
 
+function addToCart() {
+  count++;
+  document.querySelectorAll("#cart-count").forEach(el => el.innerText = count);
+}
+
+function toggleMenu() {
+  let menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+  
 <script>
 function filterProducts(category) {
   let products = document.querySelectorAll(".card");
